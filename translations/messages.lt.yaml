@@ -1,0 +1,22 @@
+odiseo_vendor:
+    ui:
+        vendor: Gamintojas
+        vendors: Gamintojai
+        edit_vendor: Redaguoti gamintoją
+        new_vendor: Naujas gamintojas
+        profile: Profilis
+        manage_vendors: Valdyti gamintojus
+    menu:
+        admin:
+            vendors: Gamintojai
+    form:
+        product:
+            select_vendor: Pasirinkti gamintoją
+        vendor:
+            slug: Slug
+            email: El. paštas
+            translations: Vertimai
+            description: Aprašymas
+            logo: Logo
+            channels: Kanalai
+            extra_emails: Papildomi el. pašto adresai

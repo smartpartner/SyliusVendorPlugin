@@ -10,7 +10,7 @@ use Sylius\Component\Core\Model\ChannelInterface;
 
 trait ProductRepositoryTrait
 {
-    abstract public function createQueryBuilder($alias, $indexBy = null);
+    abstract public function createQueryBuilder(string $alias, string|null $indexBy = null): QueryBuilder;
 
     public function createShopListByVendorQueryBuilder(
         ChannelInterface $channel,

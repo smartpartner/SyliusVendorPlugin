@@ -20,7 +20,7 @@ return [
 # config/packages/_sylius.yaml
 imports:
     # ...
-    - { resource: "@OdiseoSyliusVendorPlugin/Resources/config/config.yaml" }
+    - { resource: "@OdiseoSyliusVendorPlugin/config/config.yaml" }
 ```
 
 4. Add the shop and admin routes
@@ -28,11 +28,11 @@ imports:
 ```yml
 # config/routes.yaml
 odiseo_sylius_vendor_plugin_admin:
-    resource: "@OdiseoSyliusVendorPlugin/Resources/config/routing/admin.yaml"
+    resource: "@OdiseoSyliusVendorPlugin/config/routing/admin/vendor.yaml"
     prefix: /admin
 
 odiseo_sylius_vendor_plugin_shop:
-    resource: "@OdiseoSyliusVendorPlugin/Resources/config/routing/shop.yaml"
+    resource: "@OdiseoSyliusVendorPlugin/config/routing/shop/vendor.yaml"
     prefix: /{_locale}/vendors
     requirements:
         _locale: ^[A-Za-z]{2,4}(_([A-Za-z]{4}|[0-9]{3}))?(_([A-Za-z]{2}|[0-9]{3}))?$
