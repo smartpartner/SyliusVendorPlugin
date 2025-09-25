@@ -132,7 +132,11 @@ sylius_product:
 ```yaml
 sylius_twig_hooks:
     hooks:
-        'sylius_admin.common.create.content.form.sections.general':
+        'sylius_admin.product.create.content.form.sections.general':
+            vendor_general:
+                template: 'admin/product/form/sections/general/vendor.html.twig'
+                priority: 550
+        'sylius_admin.product.update.content.form.sections.general':
             vendor_general:
                 template: 'admin/product/form/sections/general/vendor.html.twig'
                 priority: 550
