@@ -119,13 +119,24 @@ sylius_product:
                 repository: App\Repository\ProductRepository
 ```
 
-6. Add the vendor select box to the product form edit page. So, you need to run `mkdir -p templates/bundles/SyliusAdminBundle/Product/Tab` then `cp vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle/Resources/views/Product/Tab/_details.html.twig templates/bundles/SyliusAdminBundle/Product/Tab/_details.html.twig` and then add the form widget
+6. 
+    a) Add the vendor select box to the product form edit page. So create `templates/admin/product/form/sections/general/vendor.html.twig`.
 
 ```twig
-{# ... #}
-{{ form_row(form.enabled) }}
+{# templates/admin/product/form/sections/general/vendor.html.twig #}
 {{ form_row(form.vendor) }}
-{# ... #}
+```
+
+    b) Register the hook in `config/packages/twig_hooks.yaml`
+
+```yaml
+sylius_twig_hooks:
+    hooks:
+        'sylius_admin.common.create.content.form.sections.general':
+            vendor_general:
+                template: 'admin/product/form/sections/general/vendor.html.twig'
+                priority: 550
+
 ```
 
 7. Create logo folder: run `mkdir public/media/vendor-logo -p` and insert a .gitkeep file in that folder
