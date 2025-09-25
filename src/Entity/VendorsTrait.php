@@ -12,7 +12,7 @@ use Doctrine\Common\Collections\Collection;
 trait VendorsTrait
 {
     #[ORM\ManyToMany(targetEntity: VendorInterface::class)]
-    #[ORM\JoinTable(name: 'odiseo_vendor_channels' ]
+    #[ORM\JoinTable(name: 'odiseo_vendor_channels')]
     #[ORM\JoinColumn(name: 'channel_id', referencedColumnName: 'id')]
     #[ORM\InverseJoinColumn(name: 'vendor_id', referencedColumnName: 'id')]
     protected Collection $vendors;
